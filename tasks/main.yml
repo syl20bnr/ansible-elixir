@@ -10,7 +10,7 @@
     repo: "deb https://binaries.erlang-solutions.com/debian {{ ansible_distribution_release }} contrib"
     state: present
 
-- name: Erlang | Install
+- name: Erlang | Install version {{ elixir_erlang_version }}
   apt:
     name: "erlang-base=1:{{ elixir_erlang_version }}*"
     install_recommends: no
@@ -18,7 +18,7 @@
     cache_valid_time: 3600
     state: present
 
-- name: Elixir | Install
+- name: Elixir | Install version {{ elixir_version }}
   apt:
     name: "elixir={{ elixir_version }}*"
     update_cache: yes
